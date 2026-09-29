@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ♡</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #fff0f5, #ffe4ec, #fce1ef);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #4a3038;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 500px;
+            padding: 45px 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(120, 60, 80, 0.15);
+            z-index: 2;
+        }
+
+        .small {
+            font-size: 15px;
+            color: #a36b7b;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin: 15px 0;
+            color: #c85c7b;
+        }
+
+        .message {
+            font-size: 17px;
+            line-height: 1.7;
+            margin: 20px 0;
+        }
+
+        button {
+            border: none;
+            background: #c85c7b;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 6px 15px rgba(200, 92, 123, 0.3);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #b94e6d;
+        }
+
+        #secret {
+            display: none;
+            margin-top: 25px;
+            animation: fadeIn 1s ease;
+        }
+
+        #secret h2 {
+            color: #c85c7b;
+            font-size: 30px;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(200, 92, 123, 0.35);
+            font-size: 25px;
+            animation: float 8s linear infinite;
+            bottom: -50px;
+        }
+
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 25%; animation-delay: 2s; }
+        .heart:nth-child(3) { left: 50%; animation-delay: 4s; }
+        .heart:nth-child(4) { left: 70%; animation-delay: 1s; }
+        .heart:nth-child(5) { left: 85%; animation-delay: 3s; }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+    <div class="heart">♡</div>
+
+    <div class="card">
+
+        <div class="small">hey... you ♡</div>
+
+        <h1>I have something to tell you.</h1>
+
+        <p class="message">
+            I've been wanting to say this for a while,
+            but I never really knew how.
+            So... I made you this instead. 
+        </p>
+
+        <button onclick="reveal()">Open this ♡</button>
+
+        <div id="secret">
+            <h2>I love you. ♡</h2>
+
+            <p class="message">
+                Maybe you already knew.
+                Maybe you didn't.
+                But I really, really do. 
+                <br><br>
+                You make my days a little brighter,
+                and I'm really glad I met you.
+                <br><br>
+                That's it. That's my confession. 🥹
+            </p>
+
+            <p>— from someone who likes you a little too much ♡</p>
+        </div>
+
+    </div>
+
+    <script>
+        function reveal() {
+            document.getElementById("secret").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
